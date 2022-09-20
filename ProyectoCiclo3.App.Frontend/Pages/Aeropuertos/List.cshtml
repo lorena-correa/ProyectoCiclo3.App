@@ -1,0 +1,72 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.ListAeropuertosModel
+@{
+}
+ <style>
+body {
+  background-image: url('https://images.pexels.com/photos/12374211/pexels-photo-12374211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   background-size: 100% 100%;
+}
+</style>
+ 
+<table class="table table-black">
+  <thead class="thead-white">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Pais</th>
+      <th scope="col">Coord X</th>
+      <th scope="col">Coord Y</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+   @foreach (var aeropuerto in Model.Aeropuertos)
+    {
+        <tr>
+            <td>@aeropuerto.id</td>
+            <td>@aeropuerto.nombre</td>
+            <td>@aeropuerto.ciudad</td>
+            <td>@aeropuerto.pais</td>
+            <td>@aeropuerto.coord_x</td>
+            <td>@aeropuerto.coord_y</td>
+            <td>
+              <div class="btn-group" role="group">
+                <a class="btn btn-info" asp-page="./Details" asp-route-aeropuertoId="@aeropuerto.id"><i class="fas fa-adjust"></i>Ver</a>
+                <a class="btn btn-info" asp-page="./Edit" asp-route-aeropuertoId="@aeropuerto.id">Editar</a>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal_@aeropuerto.id">
+                  Eliminar
+                </button>
+ 
+                <div class="modal fade" id="exampleModal_@aeropuerto.id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Eliminacion de Aeropuerto</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Esta seguro que desea eliminar el Aeropuerto @aeropuerto.nombre
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                          <form method="POST">
+                            <input type="number" class="form-control d-none" placeholder="id" asp-for="@aeropuerto.id">
+                            <button type="submit"class="btn btn-danger" href="">Eliminar</button>
+                          </form>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </td>
+        </tr>
+    }
+  </tbody>
+  
+</table>

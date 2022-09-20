@@ -1,0 +1,21 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.DetailsAeropuertoModel
+@{
+    var aeropuerto = Model.Aeropuerto;
+}
+ <style>
+body {
+  background-image: url('https://images.pexels.com/photos/12374211/pexels-photo-12374211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   background-size: 100% 100%;
+}
+</style>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"> <b>id: </b> @aeropuerto.id</li>
+  <li class="list-group-item"> <b>Nombre: </b> @aeropuerto.nombre</li>
+  <li class="list-group-item"> <b>Ciudad: </b> @aeropuerto.ciudad</li>
+  <li class="list-group-item"><b>Pais: </b> @aeropuerto.pais</li>
+  <li class="list-group-item"><b>Coordenada X: </b> @aeropuerto.coord_x</li>
+  <li class="list-group-item"><b>Coordenada Y: </b> @aeropuerto.coord_y</li>
+</ul>  

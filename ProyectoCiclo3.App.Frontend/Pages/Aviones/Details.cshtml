@@ -1,0 +1,21 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.DetailsAvionesModel
+@{
+    var avion = Model.Avion;
+}
+<style>
+body {
+  background-image: url('https://images.pexels.com/photos/12374211/pexels-photo-12374211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   background-size: 100% 100%;
+}
+</style>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item"> <b>id: </b> @avion.id</li>
+  <li class="list-group-item"> <b>Modelo: </b> @avion.modelo</li>
+  <li class="list-group-item"> <b>Marca: </b> @avion.marca</li>
+  <li class="list-group-item"><b>Capacidad maxima peso: </b> @avion.cap_max_peso </li>
+  <li class="list-group-item"><b>Numero asientos: </b> @avion.numero_asientos </li>
+  <li class="list-group-item"><b>Numero baños: </b> @avion.numero_baños</li>
+</ul>  

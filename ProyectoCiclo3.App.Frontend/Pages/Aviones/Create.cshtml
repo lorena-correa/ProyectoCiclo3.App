@@ -1,0 +1,31 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.FormAvionesModel
+@{
+}
+<style>
+body {
+  background-image: url('https://images.pexels.com/photos/12374211/pexels-photo-12374211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   background-size: 100% 100%;
+}
+</style>
+<div class="text-center">
+    <form method="POST">
+        <label for="modelo" class="form-label">Modelo:</label>
+        <input type="text" class="form-control"  required placeholder="Modelo" asp-for="Avion.modelo">
+        <label for="marca" class="form-label">Marca:</label>
+        <input type="text" class="form-control" id="marca" name="marca" required placeholder="Marca" asp-for="Avion.marca">
+ 
+        <label for="numero_asientos" class="form-label">Numero Asientos:</label>
+        <input type="text" class="form-control"  required placeholder="Numero asientos" asp-for="Avion.numero_asientos">
+ 
+        <label for="cap_max_peso" class="form-label">Capacidad maxima peso:</label>
+        <input type="number" class="form-control" required placeholder="Capacidad maxima peso" asp-for="Avion.cap_max_peso">
+ 
+        <label for="numero_baños" class="form-label">Numero baños:</label>
+        <input type="number" class="form-control" required placeholder="Numero baños" asp-for="Avion.numero_baños">
+        <hr>
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+</div>

@@ -1,0 +1,35 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.EditAeropuertoModel
+@{
+    var aeropuerto = Model.Aeropuerto;
+}
+ <style>
+body {
+  background-image: url('https://images.pexels.com/photos/12374211/pexels-photo-12374211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   background-size: 100% 100%;
+}
+</style>
+<div class="text-center">
+    <form method = "POST">
+        <input type="text" class="form-control d-none" id="id" name="id" required placeholder="id" minlength="3" asp-for="@aeropuerto.id" readonly>
+ 
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre" minlength="3" asp-for="@aeropuerto.nombre">
+        
+        <label for="ciudad" class="form-label">Ciudad:</label>
+        <input type="text" class="form-control" id="ciudad" name="ciudad" required placeholder="Ciudad" asp-for="@aeropuerto.ciudad">
+ 
+        <label for="pais" class="form-label">Pais:</label>
+        <input type="text" class="form-control" id="pais" name="pais" required placeholder="Pais" asp-for="@aeropuerto.pais">
+ 
+        <label for="coord_x" class="form-label">Coord X:</label>
+        <input type="number" class="form-control" id="coord_x" name="coord_x" required placeholder="Coord X" asp-for="@aeropuerto.coord_x">
+ 
+        <label for="coord_y" class="form-label">Coord Y:</label>
+        <input type="number" class="form-control" id="coord_y" name="coord_y" required placeholder="Coord Y" asp-for="@aeropuerto.coord_y">
+        <hr>
+        <button type="submit" class="btn btn-success">Actualizar</button>
+    </form>
+</div>

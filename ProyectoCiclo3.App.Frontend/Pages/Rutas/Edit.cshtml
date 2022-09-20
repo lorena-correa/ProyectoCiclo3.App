@@ -1,0 +1,39 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.EditRutaModel
+@{
+    var ruta = Model.Ruta;
+}
+<style>
+body {
+  background-image: url('https://images.pexels.com/photos/12374211/pexels-photo-12374211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<div class="text-center">
+    <form method="POST">
+        <input type="text" class="form-control d-none" id="id" name="id" required placeholder="id" minlength="3" asp-for="@ruta.id" readonly>
+
+        <label for="origen" class="form-label">Origen:</label>
+        <select name="origen" class="form-control" asp-for="@ruta.origen.id">
+            <option value="">Seleccionar un aeropuerto</option>
+            @foreach (var aeropuerto in Model.Aeropuertos)
+            {
+                <option value="@aeropuerto.id">@aeropuerto.nombre - @aeropuerto.ciudad/@aeropuerto.pais</option>
+            }
+        </select>
+        <label for="destino" class="form-label">Destino:</label>
+        <select name="destino" class="form-control" asp-for="@ruta.destino.id">
+            <option value="">Seleccionar un aeropuerto</option>
+            @foreach (var aeropuerto in Model.Aeropuertos)
+            {
+                <option value="@aeropuerto.id">@aeropuerto.nombre - @aeropuerto.ciudad/@aeropuerto.pais</option>
+            }
+        </select>
+        <label for="tiempo_estimado" class="form-label">Tiempo Estimado: </label>
+        <input type="number" class="form-control" id="tiempo_estimado" placeholder="Tiempo Estimado" name="tiempo_estimado" required asp-for="@ruta.tiempo_estimado">
+        <hr>
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+</div>

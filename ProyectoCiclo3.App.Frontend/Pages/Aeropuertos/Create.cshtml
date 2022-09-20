@@ -1,0 +1,33 @@
+@page
+@model ProyectoCiclo3.App.Frontend.Pages.FormAeropuertosModel
+@{
+}
+ <style>
+body {
+  background-image: url('https://images.pexels.com/photos/12374211/pexels-photo-12374211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+   background-size: 100% 100%;
+}
+</style>
+<div class="text-center">
+    <form method="POST">
+   <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" required placeholder="Nombre" minlength="3" asp-for="Aeropuerto.nombre">
+        <span class="text-danger" asp-validation-for="Aeropuerto.nombre"></span>
+ 
+        <label for="ciudad" class="form-label">Ciudad:</label>
+        <input type="text" class="form-control" required placeholder="Ciudad" asp-for="Aeropuerto.ciudad">
+ 
+        <label for="pais" class="form-label">Pais:</label>
+        <input type="text" class="form-control" required placeholder="Pais" asp-for="Aeropuerto.pais">
+ 
+        <label for="coord_x" class="form-label">Coord X:</label>
+        <input type="number" class="form-control" required placeholder="Coord X" asp-for="Aeropuerto.coord_x" step="any">
+ 
+        <label for="coord_y" class="form-label">Coord Y:</label>
+        <input type="number" class="form-control" required placeholder="Coord Y" asp-for="Aeropuerto.coord_y" step="any">
+        <hr>
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </form>
+</div>
